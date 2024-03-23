@@ -13,6 +13,20 @@ body {
       display: none;
   }
 }
+
+#img{
+ 
+  width: 100px;
+  height: 100px;
+  text-decoration: none;
+}
+
+
+a{
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+}
 #zxc{
   height: 70vh;
   width: 100%;
