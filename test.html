@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>
+        Тест
+    </title>
+    <style>
+        /* Styling the Body element 
+        i.e. Color, Font, Alignment */
+        body {
+            background-color: #05c46b;
+            font-family: Verdana;
+            text-align: center;
+        }
+ 
+        /* Styling the Form (Color, Padding, Shadow) */
+        form {
+            background-color: #fff;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+ 
+        /* Styling form-control Class */
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+ 
+        /* Styling form-control Label */
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+ 
+        /* Styling form-control input, 
+        select, textarea */
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+ 
+        /* Styling form-control Radio 
+        button and Checkbox */
+        .form-control input[type="radio"],
+        .form-control input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+ 
+        /* Styling Button */
+        button {
+            background-color: #05c46b;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+        a{
+            color: #fff;
+            background-color: #05c46b;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        
+        }
+    </style>
+</head>
+ 
+<body>
+ 
+    <!-- Create Form -->
+    <form class="form" style="border-radius: 10px;">
+        <div class="form-control">
+            <label for="role" id="label-role">
+                Кто вам интересен ? 
+            </label>
+ 
+            <!-- Dropdown options -->
+            <select name="number1" id="role" class="zxc">
+                <option value="" style="display:none">Выберите ответ</option>
+                <option value="man">мне нравятся мужчины</option>
+                <option value="woman">мне нравятся женщины</option>
+                <option value="both">мне нравятся оба</option>
+            </select>
+        </div>
+        <div class="form-control">
+            <label for="role" id="label-role">
+                Ваше семейное положение ? 
+            </label>
+ 
+            <!-- Dropdown options -->
+            <select name="number2" id="role" class="zxc">
+                <option value="" style="display:none">Выберите ответ</option>
+                <option value="value1">одинокий (ая)                </option>
+                <option value="value2">женат (замужем)</option>
+                <option value="value3">Трудный брак</option>
+                <option value="value4">вдова\вдовец</option>
+                <option value="value5">в отношениях</option>
+                <option value="value6">в разводе</option>
+            </select>
+        </div>
+        <div class="form-control">
+            <label for="role" id="label-role">
+                Какой твой знак зодиака ?
+            </label>
+ 
+            <!-- Dropdown options -->
+            <select name="number3" id="role" class="zxc">
+                <option value="" style="display:none">Выберите ответ</option>
+                <option value="value7">овен</option>
+                <option value="value7">телец</option>
+                <option value="value7">близнецы</option>
+                <option value="value7">рак</option>
+                <option value="value7">лев</option>
+                <option value="value7">дева</option>
+                <option value="value7">весы</option>
+                <option value="value7">скорпион</option>
+                <option value="value7">стрелец</option>
+                <option value="value7">козерог</option>
+                <option value="value7">водолей</option>
+                <option value="value7">рыбы</option>
+            </select>
+        </div>
+        <!-- Details -->
+        <div class="form-control">
+            <label for="name" id="label-name">
+                Как тебя зовут ?
+            </label>
+ 
+            <!-- Input Type Text -->
+            <input type="text" id="name" placeholder="Ваше имя" name="number4"/>
+        </div>
+        <div class="form-control">
+            <label for="name" id="label-name">Как ваша фамилия ?</label>
+            <!-- Input Type Text -->
+            <input type="text" id="name" placeholder="Ваша фамилия" name="number5"/>
+        </div>
+        <div style="padding: 30px;">
+            <label for="birthday">Укажите дату своего рождения:</label>
+            <input type="date" id="birthday" name="number6">
+            <br>
+        </div>
+        
+<style>
+    select {
+  padding: 8px;
+  margin: 5px;
+}
+</style>
+        <div class="form-control">
+            <label for="email" id="label-email">
+                На какой адрес электронной почты нам отправить готовый эскиз ?
+            </label>
+ 
+            <!-- Input Type Email-->
+            <input type="email" id="email" placeholder="ваша почта" name="number7"/>
+        </div>
+        <input type="checkbox" id="check_box" name="myCheckBox" value="1"> <label for="check_box">Я согласен с условиями обслуживания  и  политикой конфиденциальности  , а также соглашаюсь получать свой эскиз на указанный мной адрес электронной почты и даю согласие на получение другого соответствующего контента от данного сервиса через нашу информационную рассылку, от которой я могу отказаться в любое время.</label>
+        <!-- Multi-line Text Input Control -->
+        
+        <a href=""  value="submit" name="btn" id="myLink" onclick="myButton()" >
+            Отправить!  
+        </a>
+       
+        
+    </form>
+    <script src="script.js"></script>
+</body>
+ 
+</html>

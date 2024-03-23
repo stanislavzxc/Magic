@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/paystyle.css">
+</head>
+<body>
+    <div id="app"></div>
+    <h1 id="txt"><strong>ПО АКЦИИ</strong></h1>
+    <h2 class="txtmain">успей оплатить и получишь три образа своего будущего вместо одного ПО одной цене</h2>
+    <h2 class="txtmain">вместо 500 рупий - только сейчас за 300 рупий! </h2>
+    <h3 class="txtmain">Мы гарантируем гарантию уникального результата</h3>
+    
+    <div class="mainscreen">
+        <!-- <img src="https://image.freepik.com/free-vector/purple-background-with-neon-frame_52683-34124.jpg"  class="bgimg " alt="">--> 
+          <div class="card">
+            <div class="leftside">
+              <img
+                src="https://i.pinimg.com/originals/18/9d/dc/189ddc1221d9c1c779dda4ad37a35fa1.png"
+                class="product"
+                alt="Shoes"
+              />
+            </div>
+            <div class="rightside">
+              <form action="">
+                <h1>CheckOut</h1>
+                <h2>Payment Information</h2>
+                <p>Cardholder Name</p>
+                <input type="text" class="inputbox" name="name" required />
+                <p>Card Number</p>
+                <input type="number" class="inputbox" name="card_number" id="card_number" required />
+    
+                <p>Card Type</p>
+                <select class="inputbox" name="card_type" id="card_type" required>
+                  <option value="">--Select a Card Type--</option>
+                  <option value="Visa">Visa</option>
+                  <option value="RuPay">RuPay</option>
+                  <option value="MasterCard">MasterCard</option>
+                </select>
+    <div class="expcvv">
+    
+                <p class="expcvv_text">Expiry</p>
+                <input type="date" class="inputbox" name="exp_date" id="exp_date" required />
+    
+                <p class="expcvv_text2">CVV</p>
+                <input type="password" class="inputbox" name="cvv" id="cvv" required />
+            </div>
+                <p></p>
+                <button type="submit" class="button">CheckOut</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      <div class="main-div">
+        <p><strong>Да!</strong>Я хотел бы добавить «<a href=""> Чтение моей прошлой жизни, чтобы узнать, были ли я и моя вторая половинка вместе раньше» к моему заказу за 199 рупий</a></p>
+      </div>
+      <div class="main-div">
+        <p><strong>Да!</strong>Я хочу получать <a href="">ежемесячный прогноз экстрасенсорных прогнозов на 2024 год на следующие 12 месяцев к своему заказу за 199 рупий</a></p>
+      </div>
+      <div class="main-div">
+        <p><strong>Да!</strong>Включите <a href=""> инициалы моей второй половинки </a> (ПОПУЛЯРНО!) в мою покупку всего за 99  рупий прямо сейчас</p>
+      </div>
+    
+<script>
+    const FULL_DASH_ARRAY = 283;
+const WARNING_THRESHOLD = 10;
+const ALERT_THRESHOLD = 5;
+
+const COLOR_CODES = {
+  info: {
+    color: "green"
+  },
+  warning: {
+    color: "orange",
+    threshold: WARNING_THRESHOLD
+  },
+  alert: {
+    color: "red",
+    threshold: ALERT_THRESHOLD
+  }
+};
+
+const TIME_LIMIT = 180;
+let timePassed = 0;
+let timeLeft = TIME_LIMIT;
+let timerInterval = null;
+let remainingPathColor = COLOR_CODES.info.color;
+
+document.getElementById("app").innerHTML = `
+<div class="base-timer">
+  <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <g class="base-timer__circle">
+      <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+      <path
+        id="base-timer-path-remaining"
+        stroke-dasharray="283"
+        class="base-timer__path-remaining ${remainingPathColor}"
+        d="
+          M 50, 50
+          m -45, 0
+          a 45,45 0 1,0 90,0
+          a 45,45 0 1,0 -90,0
+        "
+      ></path>
+    </g>
+  </svg>
+  <span id="base-timer-label" class="base-timer__label">${formatTime(
+    timeLeft
+  )}</span>
+</div>
+`;
+
+startTimer();
+
+function onTimesUp() {
+  clearInterval(timerInterval);
+}
+
+function startTimer() {
+  timerInterval = setInterval(() => {
+    timePassed = timePassed += 1;
+    timeLeft = TIME_LIMIT - timePassed;
+    document.getElementById("base-timer-label").innerHTML = formatTime(
+      timeLeft
+    );
+    setCircleDasharray();
+    setRemainingPathColor(timeLeft);
+
+    if (timeLeft === 0) {
+      onTimesUp();
+    }
+  }, 1000);
+}
+
+function formatTime(time) {
+  const minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+
+  if (seconds < 10) {
+    seconds = `0${seconds}`;
+  }
+
+  return `${minutes}:${seconds}`;
+}
+
+function setRemainingPathColor(timeLeft) {
+  const { alert, warning, info } = COLOR_CODES;
+  if (timeLeft <= alert.threshold) {
+    document
+      .getElementById("base-timer-path-remaining")
+      .classList.remove(warning.color);
+    document
+      .getElementById("base-timer-path-remaining")
+      .classList.add(alert.color);
+  } else if (timeLeft <= warning.threshold) {
+    document
+      .getElementById("base-timer-path-remaining")
+      .classList.remove(info.color);
+    document
+      .getElementById("base-timer-path-remaining")
+      .classList.add(warning.color);
+  }
+}
+
+function calculateTimeFraction() {
+  const rawTimeFraction = timeLeft / TIME_LIMIT;
+  return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
+}
+
+function setCircleDasharray() {
+  const circleDasharray = `${(
+    calculateTimeFraction() * FULL_DASH_ARRAY
+  ).toFixed(0)} 283`;
+  document
+    .getElementById("base-timer-path-remaining")
+    .setAttribute("stroke-dasharray", circleDasharray);
+}
+</script>
+</body>
+</html>
