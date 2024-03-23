@@ -16,13 +16,13 @@ let input7 = document.getElementsByName('number7')[0]
 let year = 0;
 
 function myButton() {
+  let year = input6.value.substring(0, 4);
+  console.log(year)
    if (input1.value === '' || input2.value === ''|| input3.value === '' || input4.value === '' || input5.value === '' || input6.value === '' || input7.value === '') {
      alert("Заполните все поля");
    } else if (checkbox.checked === false) {
    alert('нажмите на галочку');
-   let year = input6.value.substring(0, 4);
-   console.log(year)
-  } else if (year < 2023){
+   }else if (year > 2023){
       alert("Год рождения не должен превышать 2023");
   }
   else {
