@@ -16,7 +16,7 @@ let input7 = document.getElementsByName('number7')[0]
 let year = 0;
 
 function myButton() {
-  let year = input6.value.substring(0, 4);
+   year = input6.value.substring(0, 4);
   console.log(year)
    if (input1.value === '' || input2.value === ''|| input3.value === '' || input4.value === '' || input5.value === '' || input6.value === '' || input7.value === '') {
      alert("Заполните все поля");
